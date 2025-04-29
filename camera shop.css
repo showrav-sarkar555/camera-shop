@@ -2,7 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+body , html{
+    overflow-x: hidden;
+}
 .font {
     font-family: "Azeret Mono", monospace;
     font-optical-sizing: auto;
@@ -13,7 +15,6 @@
 body {
     max-width: 100%;
     margin: 0px auto;
-
 }
 
 main {
@@ -26,9 +27,8 @@ main {
 }
 
 .nav ul {
-    gap: 20px;
+    gap: 30px;
 }
-
 
 /* shared styles */
 .flex {
@@ -52,21 +52,35 @@ main {
     font-size: 16px;
     font-weight: 700;
     padding: 10px 24px 10px 24px;
+    cursor: pointer;
 }
 
 
-
+.btn:hover {
+    background-color: rgb(189, 30, 92); 
+    transition: background-color 0.3s ease;
+}
 
 .heading {
     margin: 80px auto;
-
     max-width: 1200px;
     justify-content: space-between;
+}
+
+li {
+    list-style: none;
 }
 
 .nav a {
     text-decoration: none;
     color: rgb(58, 58, 58);
+}
+.nav li :hover{
+    background-color:rgb(224, 44, 109) ;
+    color: white;
+    padding:5px;
+    transform: scale(1.05);
+    transition: .5s;
 }
 
 .banner {
@@ -101,7 +115,7 @@ main {
     align-items: center;
 }
 
-.gallery>h3 {
+.gallery > h3 {
     color: rgb(58, 58, 58);
     width: 262px;
     margin: 90px auto;
@@ -116,6 +130,7 @@ main {
     column-gap: 4px;
     row-gap: 30px;
     justify-items: center;
+    
 }
 
 .box {
@@ -129,25 +144,27 @@ main {
     border-radius: 6px;
     box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
 }
+.box-container :hover {
+    transform: scale(1.04);
+    transition: transform 0.6s;
+}
 
-.box>p {
-
+.box > p {
     max-width: 300px;
     color: rgb(120, 120, 133);
     font-family: Inter;
     font-size: 14px;
     font-weight: 700;
-
 }
 
-.box>h4 {
+.box > h4 {
     color: rgba(0, 0, 0, 0.87);
     font-family: Inter;
     font-size: 24px;
     font-weight: 400;
 }
 
-.box>h3 {
+.box > h3 {
     color: rgb(24, 25, 31);
     font-family: Poppins;
     font-size: 28px;
@@ -194,7 +211,6 @@ main {
 
 .feature .img img {
     max-height: 260px;
-
 }
 
 footer {
@@ -212,7 +228,6 @@ footer {
 
 .links {
     gap: 20px;
-    ;
 }
 
 footer img {
@@ -220,16 +235,14 @@ footer img {
 }
 
 
-
 @media only screen and (max-width: 600px) {
     * {
         margin: 0px;
         padding: 0px;
-
     }
 
     body {
-        max-width: 100%;
+        width: 100%;
         margin: 0px auto;
     }
 
@@ -284,22 +297,54 @@ footer img {
         gap: 20px;
     }
 
-    .feature .img {
-        /* max-width: 100%; */
-
-    }
-
     .feature .text {
         height: auto;
         text-align: center;
     }
 
     footer {
+        width: 100%;
         height: auto;
         flex-direction: column;
         position: relative;
         top: 350px;
     }
+}
 
 
+@media only screen and (max-width: 992px) and (min-width: 601px) {
+    .heading,
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .banner {
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .box-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+    .feature .btn{
+        position: relative;
+        left: 210px;
+    }
+
+    .feature .text {
+        text-align: center;
+    }
+    footer{
+        position: relative;
+        top: 250px;
+    }
 }
